@@ -1,0 +1,1 @@
+import "dotenv/config";import "../backend/db.js";console.log("SQLite-Datenbank initialisiert.");
