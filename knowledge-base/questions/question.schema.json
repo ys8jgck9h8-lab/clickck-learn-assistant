@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Click & Learn AI question",
+  "type": "object",
+  "required": ["id", "text", "answers"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "answers": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "text"], "properties": {"id": {"type": "string"}, "text": {"type": "string"}}}},
+    "correctAnswerIds": {"type": "array", "items": {"type": "string"}},
+    "explanation": {"type": "string"},
+    "topic": {"type": "string"},
+    "legalBasis": {"type": "string"},
+    "image": {"type": ["object", "null"], "properties": {"ref": {"type": "string"}, "description": {"type": "string"}}},
+    "source": {"type": "object"},
+    "verified": {"type": "boolean", "default": false}
+  },
+  "additionalProperties": true
+}
